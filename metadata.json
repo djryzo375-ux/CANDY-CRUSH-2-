@@ -1,0 +1,6 @@
+{
+  "name": "Candy Crush 2",
+  "description": "The sweetest match-3 puzzle adventure with striped candies, wrapped bombs, rainbow color bombs, jelly challenges, and juicy saga levels!",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

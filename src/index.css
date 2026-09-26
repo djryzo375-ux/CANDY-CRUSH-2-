@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Fredoka', 'Nunito', system-ui, -apple-system, sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    overflow-x: hidden;
+    background-color: #3b0764;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 12px rgba(255, 230, 0, 1)); transform: scale(1.08); }
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  70% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rainbow-spin {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes jelly-wobble {
+  0% { transform: scale(1, 1); }
+  30% { transform: scale(1.15, 0.85); }
+  50% { transform: scale(0.9, 1.1); }
+  70% { transform: scale(1.05, 0.95); }
+  100% { transform: scale(1, 1); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.animate-pop-in {
+  animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-rainbow {
+  animation: rainbow-spin 4s linear infinite;
+}
+
+.animate-wobble {
+  animation: jelly-wobble 0.6s ease;
+}
+
+/* Custom candy board shadow and textures */
+.candy-board-wood {
+  background: radial-gradient(circle at 50% 30%, #581c87 0%, #2e1065 100%);
+  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.5), 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.candy-tile-slot {
+  background: rgba(45, 10, 80, 0.45);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+/* Text stroke for arcade style */
+.text-stroke-candy {
+  -webkit-text-stroke: 3px #4a044e;
+}
+
+.text-stroke-candy-sm {
+  -webkit-text-stroke: 1.5px #3b0764;
+}
+
+.text-stroke-white {
+  -webkit-text-stroke: 2px #ffffff;
+}
+
+/* Fast-render mode for 1GB/2GB low-end phones (Safe mode) */
+.fast-render * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(46, 16, 101, 0.4);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.6);
+  border-radius: 9999px;
+}
